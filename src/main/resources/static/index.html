@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghana Kanta Payeng // Software Engineer & Terminal Portfolio</title>
+  <meta name="description" content="Portfolio of Ghana Kanta Payeng - Software Engineer, Full Stack Developer, B.Tech CSE at Dibrugarh University. Specialized in Java Spring Boot, MySQL, and high-performance Web systems.">
+  <meta name="keywords" content="Ghana Kanta Payeng, Software Engineer, Java Spring Boot, MySQL, React, Blood Bridge, URL Shortener, Portfolio, Dibrugarh University">
+  <meta name="author" content="Ghana Kanta Payeng">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts: JetBrains Mono, Syne, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Terminal Glassmorphism Design System -->
+  <link rel="stylesheet" href="css/terminal-glass.css">
+</head>
+<body data-theme="cyber">
+
+  <!-- CRT Scanline Effect (Toggleable) -->
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <!-- Matrix Digital Rain Canvas -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <!-- ==========================================================================
+       TOP STATUS & TICKER BAR (Inspired by reference image)
+       ========================================================================== -->
+  <header class="top-ticker-bar" role="banner">
+    <div class="ticker-left">
+      <div class="terminal-badge">
+        <span class="pulse-dot"></span>
+        <span>GHANA_OS // v2.6.4</span>
+      </div>
+      <span style="color: var(--text-muted); font-size: 0.72rem; display: none; @media(min-width:768px){display:inline;}">
+        CSE @ DIBRUGARH UNIV
+      </span>
+    </div>
+
+    <div class="ticker-marquee-wrap">
+      <div class="ticker-marquee">
+        <span>>> WELCOME TO GHANA KANTA PAYENG TERMINAL PORTFOLIO</span>
+        <span class="highlight">>> FULL STACK ENGINEER: JAVA SPRING BOOT & MYSQL</span>
+        <span>>> FEATURED PROJECTS: BLOOD BRIDGE & URL SHORTENER</span>
+        <span class="highlight">>> SOCIAL IMPACT: PROJECT HUMANITY & JAGRITI UNNAYAN KENDRA</span>
+        <span>>> SYSTEM STATUS: ALL CORES OPERATIONAL [2026]</span>
+        <span>>> OPEN FOR FULL-TIME ROLES & HIGH-IMPACT COLLABORATIONS</span>
+      </div>
+    </div>
+
+    <div class="ticker-controls">
+      <button class="ticker-btn" id="toggle-sound-btn" title="Toggle Mechanical Audio FX">
+        <i class="fas fa-volume-mute"></i> SFX [OFF]
+      </button>
+      <button class="ticker-btn" id="toggle-matrix-btn" title="Toggle Digital Rain">
+        <i class="fas fa-network-wired"></i> MATRIX [ON]
+      </button>
+      <button class="ticker-btn" id="toggle-crt-btn" title="Toggle CRT Scanline">
+        <i class="fas fa-tv"></i> CRT [ON]
+      </button>
+
+      <div class="ticker-links">
+        <a href="https://github.com/ghanapayeng" target="_blank" rel="noopener" title="GitHub Profile">
+          <i class="fab fa-github"></i> GITHUB
+        </a>
+        <a href="https://www.linkedin.com/in/ghana-payeng" target="_blank" rel="noopener" title="LinkedIn Profile">
+          <i class="fab fa-linkedin"></i> LINKEDIN
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       FLOATING GLASSMORPHIC COMMAND NAVIGATION (Reference Tab Bar)
+       ========================================================================== -->
+  <nav class="glass-nav-wrapper" aria-label="Main Navigation">
+    <div class="glass-nav-pill">
+      <a href="#home" class="nav-tab active">
+        <span>&lt;HOME&gt;</span><span class="tab-cursor">_</span>
+      </a>
+      <a href="#cli-terminal" class="nav-tab">
+        <span>&lt;TERMINAL_CLI&gt;</span><span class="tab-cursor">_</span>
+      </a>
+      <a href="#projects" class="nav-tab">
+        <span>&lt;PROJECTS&gt;</span><span class="tab-cursor">_</span>
+      </a>
+      <a href="#skills" class="nav-tab">
+        <span>&lt;SKILLS&gt;</span><span class="tab-cursor">_</span>
+      </a>
+      <a href="#experience" class="nav-tab">
+        <span>&lt;EXPERIENCE&gt;</span><span class="tab-cursor">_</span>
+      </a>
+      <a href="#memories" class="nav-tab">
+        <span>&lt;MEMORIES&gt;</span><span class="tab-cursor">_</span>
+      </a>
+      <a href="#connect" class="nav-tab">
+        <span>&lt;CONNECT&gt;</span><span class="tab-cursor">_</span>
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         HERO TERMINAL SHOWCASE (From Reference Image)
+         ========================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="hero-terminal-card">
+          <!-- Terminal Header Strip -->
+          <div class="hero-header-strip">
+            <div class="hero-tag">
+              <span>GHANA KANTA PAYENG &gt;</span><span class="tag-cursor">_</span>
+            </div>
+            <div class="hero-year">[2026]</div>
+          </div>
+
+          <!-- Bold Brutalist Headline with Halftone Effect -->
+          <h1 class="hero-title">
+            A DEVELOPER THAT PUTS <span class="halftone-text">ENGINEERING</span> FIRST
+          </h1>
+
+          <!-- Monospace Subtitle -->
+          <p class="hero-subtitle">
+            Hi, I'm <strong>Ghana Kanta Payeng</strong>, a Computer Science & Engineering undergraduate at 
+            <strong>Dibrugarh University Institute of Engineering & Technology</strong>. 
+            I build resilient backends with <span class="accent-text">Java Spring Boot & MySQL</span>, 
+            and design modern reactive web experiences that deliver real-world impact.
+          </p>
+
+          <!-- Interactive Action Buttons -->
+          <div class="hero-actions">
+            <a href="#cli-terminal" class="btn-terminal btn-terminal-primary">
+              <i class="fas fa-terminal"></i> [ $ launch_cli --interactive ]
+            </a>
+            <a href="#projects" class="btn-terminal btn-terminal-glass">
+              <i class="fas fa-layer-group"></i> [ $ view_projects --featured ]
+            </a>
+            <button onclick="openGhanaModal('resumeModal')" class="btn-terminal btn-terminal-glass">
+              <i class="fas fa-file-pdf"></i> [ $ cat resume.pdf ]
+            </button>
+            <a href="#connect" class="btn-terminal btn-terminal-outline">
+              <i class="fas fa-paper-plane"></i> [ $ connect --direct ]
+            </a>
+          </div>
+
+          <!-- Live Telemetry Status Bar -->
+          <div class="hero-telemetry-bar">
+            <div class="telemetry-item">
+              <div class="telemetry-icon"><i class="fas fa-signal"></i></div>
+              <div class="telemetry-info">
+                <span class="telemetry-label">System State</span>
+                <span class="telemetry-val online">ONLINE / READY</span>
+              </div>
+            </div>
+            <div class="telemetry-item">
+              <div class="telemetry-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="telemetry-info">
+                <span class="telemetry-label">Base Location</span>
+                <span class="telemetry-val">Assam, India</span>
+              </div>
+            </div>
+            <div class="telemetry-item">
+              <div class="telemetry-icon"><i class="fas fa-database"></i></div>
+              <div class="telemetry-info">
+                <span class="telemetry-label">Architecture</span>
+                <span class="telemetry-val">Spring Boot + MySQL</span>
+              </div>
+            </div>
+            <div class="telemetry-item">
+              <div class="telemetry-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="telemetry-info">
+                <span class="telemetry-label">Academic Detail</span>
+                <span class="telemetry-val">B.Tech CSE (2023-27)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE TERMINAL CLI WINDOW (Terminal Code Simulator)
+         ========================================================================== -->
+    <section id="cli-terminal" class="terminal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Interactive Terminal Simulator</span>
+          <h2 class="section-title">CODE LIKE IN A REAL SHELL</h2>
+          <p class="section-desc">
+            Type commands directly below to inspect systems, trigger benchmarks, switch themes, or launch projects. 
+            Try commands like <code>projects</code>, <code>run blood-bridge</code>, <code>skills</code>, or <code>neofetch</code>.
+          </p>
+        </div>
+
+        <div class="terminal-window">
+          <!-- Terminal Titlebar -->
+          <div class="terminal-titlebar">
+            <div class="terminal-traffic-lights">
+              <span class="light light-red" onclick="document.getElementById('terminal-history').innerHTML='';" title="Clear buffer"></span>
+              <span class="light light-yellow" onclick="document.getElementById('terminal-input').focus();" title="Focus cursor"></span>
+              <span class="light light-green" onclick="GhanaTerminal.execute('neofetch')" title="Execute Neofetch"></span>
+            </div>
+
+            <div class="terminal-path">
+              <i class="fas fa-terminal"></i>
+              <span>ghanapayeng@portfolio: ~/workspace/interactive-cli</span>
+            </div>
+
+            <div class="terminal-actions-bar">
+              <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('cyber')">Theme: Cyber</span>
+              <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('matrix')">Matrix</span>
+              <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('amber')">Amber</span>
+              <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('hacker')">Hacker</span>
+            </div>
+          </div>
+
+          <!-- Terminal Body Screen -->
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-welcome">
+              <div class="terminal-ascii">
+   _____  _   _   ___   _   _   ___    _____ _____ 
+  |  __ \| | | | / _ \ | \ | | / _ \  |  _  /  ___|
+  | |  \/| |_| |/ /_\ \|  \| |/ /_\ \ | | | \ `--. 
+  | | __ |  _  ||  _  || . ` ||  _  | | | | |`--. \
+  | |_\ \| | | || | | || |\  || | | | \ \_/ /\__/ /
+   \____/\_| |_/\_| |_/\_| \_/\_| |_/  \___/\____/ 
+              </div>
+              <p style="color: var(--accent); font-weight: 700; margin-bottom: 4px;">
+                GHANA_OS (x86_64-pc-linux-gnu) Version 2.6.4 [ONLINE]
+              </p>
+              <p style="color: var(--text-muted); font-size: 0.84rem; margin-bottom: 12px;">
+                Type <code style="color: var(--term-green); font-weight: 700;">help</code> to view available commands, or click any quick shortcut below.
+              </p>
+            </div>
+
+            <!-- Command History Log -->
+            <div class="terminal-history" id="terminal-history"></div>
+
+            <!-- Active Input Line -->
+            <div class="terminal-input-line">
+              <span class="prompt-user">ghana@portfolio</span>:<span class="prompt-dir">~$</span>
+              <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="Type: help, projects, skills, neofetch...">
+            </div>
+          </div>
+
+          <!-- Virtual Touch Keypad for Smartphones & PC Quick Commands -->
+          <div class="terminal-mobile-shortcuts">
+            <span style="font-size: 0.72rem; color: var(--text-dim); margin-right: 6px; align-self: center;">QUICK CMD:</span>
+            <button class="shortcut-chip" data-cmd="help">help</button>
+            <button class="shortcut-chip" data-cmd="projects">projects</button>
+            <button class="shortcut-chip" data-cmd="run blood-bridge">run blood-bridge</button>
+            <button class="shortcut-chip" data-cmd="run url-shortener">run url-shortener</button>
+            <button class="shortcut-chip" data-cmd="skills">skills</button>
+            <button class="shortcut-chip" data-cmd="neofetch">neofetch</button>
+            <button class="shortcut-chip" data-cmd="about">about</button>
+            <button class="shortcut-chip" data-cmd="sudo hire-me">sudo hire-me</button>
+            <button class="shortcut-chip" data-cmd="clear">clear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS SECTION (Blood Bridge, URL Shortener, etc.)
+         ========================================================================== -->
+    <section id="projects" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Engineering Showcase</span>
+          <h2 class="section-title">FEATURED PROJECTS</h2>
+          <p class="section-desc">
+            Production-grade systems designed with scalability, clean architecture, and real-world social utility in mind.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Featured Project 1: Blood Bridge -->
+          <article class="project-card">
+            <div class="project-card-header">
+              <div class="project-status live">LIVE SYSTEM</div>
+              <div class="project-tag">HEALTHCARE // EMERGENCY</div>
+            </div>
+
+            <div class="project-img-wrap">
+              <img src="assets/images/blood-bridge-preview.jpg" alt="Blood Bridge Web Application Dashboard" class="project-img" loading="lazy">
+              <div class="project-overlay-specs">
+                <span><i class="fas fa-heartbeat" style="color: var(--term-red);"></i> Emergency Matching</span>
+                <span>Latency &lt; 20ms</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-name">Blood Bridge</h3>
+              <p class="project-summary">
+                A mission-critical blood donation web application engineered to bridge the gap between emergency blood seekers, registered voluntary donors, and hospital blood banks in real time. Features live inventory tracking for all blood groups (A+, B+, O-, AB+), urgent distress SOS broadcasts, and location-based donor notifications.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-badge"><i class="fab fa-java"></i> Java Spring Boot</span>
+                <span class="tech-badge"><i class="fas fa-database"></i> MySQL</span>
+                <span class="tech-badge"><i class="fab fa-react"></i> React.js</span>
+                <span class="tech-badge"><i class="fas fa-bolt"></i> WebSocket</span>
+                <span class="tech-badge"><i class="fas fa-map-marker-alt"></i> Geolocation</span>
+              </div>
+
+              <div class="project-buttons">
+                <a href="https://github.com/ghanapayeng/blood-bridge" target="_blank" rel="noopener" class="btn-project btn-project-primary">
+                  <i class="fab fa-github"></i> GitHub Repo [↗]
+                </a>
+                <button onclick="GhanaTerminal.execute('run blood-bridge')" class="btn-project btn-project-secondary">
+                  <i class="fas fa-terminal"></i> CLI Run
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Featured Project 2: URL Shortener -->
+          <article class="project-card">
+            <div class="project-card-header">
+              <div class="project-status live">MICROSERVICE</div>
+              <div class="project-tag">DISTRIBUTED // CACHE</div>
+            </div>
+
+            <div class="project-img-wrap">
+              <img src="assets/images/url-shortener-preview.jpg" alt="URL Shortener Microservice Dashboard" class="project-img" loading="lazy">
+              <div class="project-overlay-specs">
+                <span><i class="fas fa-bolt" style="color: var(--term-green);"></i> 12ms Redirection</span>
+                <span>10k+ Req/Sec</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-name">URL Shortener Microservice</h3>
+              <p class="project-summary">
+                High-throughput distributed URL shortening and click-telemetry microservice. Designed with Base62 collision-free hashing, Redis in-memory caching for sub-15ms redirects, custom vanity aliases, instant QR code generator, and comprehensive MySQL telemetry analytics capturing referrers, devices, and geo-locations.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-badge"><i class="fab fa-java"></i> Java Spring Boot</span>
+                <span class="tech-badge"><i class="fas fa-database"></i> Spring Data JPA / MySQL</span>
+                <span class="tech-badge"><i class="fas fa-server"></i> Redis Cache</span>
+                <span class="tech-badge"><i class="fab fa-react"></i> React / Glass UI</span>
+                <span class="tech-badge"><i class="fas fa-chart-line"></i> Analytics</span>
+              </div>
+
+              <div class="project-buttons">
+                <a href="https://github.com/ghanapayeng/url-shortener" target="_blank" rel="noopener" class="btn-project btn-project-primary">
+                  <i class="fab fa-github"></i> GitHub Repo [↗]
+                </a>
+                <button onclick="GhanaTerminal.execute('run url-shortener')" class="btn-project btn-project-secondary">
+                  <i class="fas fa-terminal"></i> CLI Run
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Showcase Project 3: Full Stack Systems -->
+          <article class="project-card">
+            <div class="project-card-header">
+              <div class="project-status live">ACADEMIC // LAB</div>
+              <div class="project-tag">DISTRIBUTED SYSTEMS</div>
+            </div>
+
+            <div class="project-img-wrap">
+              <img src="assets/images/project1.jpg" alt="Systems Project" class="project-img" loading="lazy">
+              <div class="project-overlay-specs">
+                <span><i class="fas fa-code"></i> Engineering Labs</span>
+                <span>Dibrugarh Univ</span>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-name">Distributed Engineering Systems</h3>
+              <p class="project-summary">
+                Core engineering research and software development encompassing multi-threaded client-server sockets, low-latency data structures, relational and document schema design, and asynchronous task workers.
+              </p>
+
+              <div class="project-tech-stack">
+                <span class="tech-badge"><i class="fas fa-microchip"></i> C / C++</span>
+                <span class="tech-badge"><i class="fab fa-java"></i> Java 25</span>
+                <span class="tech-badge"><i class="fas fa-database"></i> MySQL / SQL</span>
+                <span class="tech-badge"><i class="fab fa-linux"></i> Linux OS</span>
+              </div>
+
+              <div class="project-buttons">
+                <button onclick="openGhanaModal('modalProject1')" class="btn-project btn-project-primary">
+                  <i class="fas fa-info-circle"></i> Deep Dive
+                </button>
+                <a href="https://github.com/ghanapayeng" target="_blank" rel="noopener" class="btn-project btn-project-secondary">
+                  <i class="fab fa-github"></i> Repositories
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS & TECH MATRIX SECTION
+         ========================================================================== */
+    ========================================================================== -->
+    <section id="skills" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Technical Competencies</span>
+          <h2 class="section-title">SKILLS & TECH STACK</h2>
+          <p class="section-desc">
+            Technologies, frameworks, and foundational computer science domains I work with daily.
+          </p>
+        </div>
+
+        <!-- Animated Infinite Marquee Ribbon of Skill Logos -->
+        <div class="skills-marquee-container" aria-hidden="true">
+          <div class="skills-marquee-track">
+            <div class="skill-item-pill">
+              <img src="assets/icons/java-logo.png" alt="Java" class="skill-icon-img">
+              <span class="skill-name-text">Java (Spring Boot)</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/react-logo.png" alt="React" class="skill-icon-img">
+              <span class="skill-name-text">React.js</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/node-logo.png" alt="Node" class="skill-icon-img">
+              <span class="skill-name-text">Node.js</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/python-logo.png" alt="Python" class="skill-icon-img">
+              <span class="skill-name-text">Python</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/c-plus-programming-language-emblem-vector-30039389.jpg" alt="C++" class="skill-icon-img">
+              <span class="skill-name-text">C / C++</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png" alt="SQL" class="skill-icon-img">
+              <span class="skill-name-text">MySQL Database Architecture</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/js-logo.png" alt="JavaScript" class="skill-icon-img">
+              <span class="skill-name-text">Modern JavaScript</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/html-logo.png" alt="HTML5" class="skill-icon-img">
+              <span class="skill-name-text">HTML5 & Semantic Web</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/css-logo.png" alt="CSS3" class="skill-icon-img">
+              <span class="skill-name-text">CSS3 & Glassmorphism</span>
+            </div>
+
+            <!-- Duplicate for seamless infinite loop -->
+            <div class="skill-item-pill">
+              <img src="assets/icons/java-logo.png" alt="Java" class="skill-icon-img">
+              <span class="skill-name-text">Java (Spring Boot)</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/react-logo.png" alt="React" class="skill-icon-img">
+              <span class="skill-name-text">React.js</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/node-logo.png" alt="Node" class="skill-icon-img">
+              <span class="skill-name-text">Node.js</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/python-logo.png" alt="Python" class="skill-icon-img">
+              <span class="skill-name-text">Python</span>
+            </div>
+            <div class="skill-item-pill">
+              <img src="assets/icons/c-plus-programming-language-emblem-vector-30039389.jpg" alt="C++" class="skill-icon-img">
+              <span class="skill-name-text">C / C++</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Domain Cards -->
+        <div class="skills-grid-detailed">
+          <div class="skill-cat-card">
+            <h3 class="skill-cat-title"><i class="fas fa-server"></i> Backend & Frameworks</h3>
+            <div class="skill-cat-tags">
+              <span class="skill-pill"><i class="fab fa-java"></i> Java 25</span>
+              <span class="skill-pill"><i class="fas fa-leaf"></i> Spring Boot 3</span>
+              <span class="skill-pill"><i class="fas fa-network-wired"></i> RESTful APIs</span>
+              <span class="skill-pill"><i class="fas fa-plug"></i> WebSockets</span>
+              <span class="skill-pill"><i class="fab fa-node-js"></i> Node.js & Express</span>
+              <span class="skill-pill"><i class="fab fa-python"></i> Python 3</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-card">
+            <h3 class="skill-cat-title"><i class="fas fa-database"></i> Databases & Storage</h3>
+            <div class="skill-cat-tags">
+              <span class="skill-pill"><i class="fas fa-database" style="color: var(--term-green);"></i> MySQL & RDBMS</span>
+              <span class="skill-pill"><i class="fas fa-layer-group"></i> JPA & Hibernate</span>
+              <span class="skill-pill"><i class="fas fa-bolt"></i> Redis Caching</span>
+              <span class="skill-pill"><i class="fas fa-table"></i> Schema Optimization</span>
+              <span class="skill-pill"><i class="fas fa-search"></i> Aggregation Pipelines</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-card">
+            <h3 class="skill-cat-title"><i class="fas fa-laptop-code"></i> Frontend & UI/UX</h3>
+            <div class="skill-cat-tags">
+              <span class="skill-pill"><i class="fab fa-react"></i> React.js</span>
+              <span class="skill-pill"><i class="fab fa-js"></i> JavaScript (ES6+)</span>
+              <span class="skill-pill"><i class="fab fa-css3-alt"></i> Modern CSS & Glassmorphism</span>
+              <span class="skill-pill"><i class="fab fa-html5"></i> Semantic HTML5</span>
+              <span class="skill-pill"><i class="fas fa-mobile-alt"></i> Responsive Layouts</span>
+            </div>
+          </div>
+
+          <div class="skill-cat-card">
+            <h3 class="skill-cat-title"><i class="fas fa-cogs"></i> CS Core & DevOps</h3>
+            <div class="skill-cat-tags">
+              <span class="skill-pill"><i class="fas fa-microchip"></i> C & C++ (DSA)</span>
+              <span class="skill-pill"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+              <span class="skill-pill"><i class="fab fa-linux"></i> Linux CLI & Bash</span>
+              <span class="skill-pill"><i class="fas fa-box"></i> Maven Build Tool</span>
+              <span class="skill-pill"><i class="fas fa-vial"></i> Postman API Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE, SOCIAL INTERNSHIPS & CERTIFICATES SECTION
+         ========================================================================== -->
+    <section id="experience" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Field Leadership & Research</span>
+          <h2 class="section-title">EXPERIENCE & IMPACT</h2>
+          <p class="section-desc">
+            Grassroots social leadership and human-centric research projects that shaped my dedication to engineering technology for real societal welfare.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <!-- Experience 1: Jagriti Sanmilita Unnayan Kendra -->
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Social Internship</h3>
+                <div class="exp-org">Jagriti Sanmilita Unnayan Kendra</div>
+              </div>
+              <span class="exp-duration">June 2024 - July 2025</span>
+            </div>
+
+            <p class="exp-desc">
+              Conducted comprehensive healthcare and dietary assessments for over 100 elderly residents at an old age home, resulting in a 40% increase in resident meal satisfaction ratings. Organized and facilitated weekly therapeutic engagement sessions with 50+ individuals experiencing mental health challenges, notably elevating morale and social connection.
+            </p>
+
+            <div class="exp-cert-thumb" onclick="openGhanaModal('certificateModal1')" title="Click to view verified certificate">
+              <img src="assets/images/JagritiUnnayan.jpg" alt="Jagriti Sanmilita Unnayan Kendra Certificate" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Experience 2: Project Humanity -->
+          <div class="experience-card">
+            <div class="exp-header">
+              <div>
+                <h3 class="exp-title">Addiction Outreach Lead</h3>
+                <div class="exp-org">Project Humanity</div>
+              </div>
+              <span class="exp-duration">Aug 2024 - Sept 2025</span>
+            </div>
+
+            <p class="exp-desc">
+              Designed and deployed an empirical survey targeting 100+ individuals struggling with substance dependency. Identified structural and psychological barriers to treatment access, directly empowering community outreach strategies and boosting intervention effectiveness by 60% across target districts.
+            </p>
+
+            <div class="exp-cert-thumb" onclick="openGhanaModal('certificateModal2')" title="Click to view verified certificate">
+              <img src="assets/images/ProjectHumanity.jpg" alt="Project Humanity Certificate" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Academic Institution Card -->
+        <div class="academic-card" style="margin-top: 36px;">
+          <div class="academic-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div>
+            <span class="telemetry-label" style="color: var(--accent);">B.Tech Computer Science and Engineering (2023 - 2027)</span>
+            <h3 style="color: #fff; font-size: 1.35rem; margin: 4px 0;">Dibrugarh University Institute of Engineering & Technology</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem;">
+              Focusing on Object-Oriented Software Design, Distributed Computing, Database Management Systems (MySQL, Relational Databases), Data Structures & Algorithms, Computer Networks, and Operating Systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         MEMORIES & CAMPUS LIFE GALLERY
+         ========================================================================== -->
+    <section id="memories" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Moments & Milestones</span>
+          <h2 class="section-title">FIELD WORK & MEMORIES</h2>
+          <p class="section-desc">
+            Capturing the journey: community field visits, teaching underprivileged youth, and university campus days.
+          </p>
+        </div>
+
+        <div class="memories-grid">
+          <div class="memory-card">
+            <div class="memory-media-wrap">
+              <img src="assets/images/job3.jpg" alt="Teaching underprivileged children" loading="lazy">
+            </div>
+            <div class="memory-info">
+              <div class="memory-title">Community Education</div>
+              <p class="memory-caption">Mentoring and teaching young underprivileged students.</p>
+            </div>
+          </div>
+
+          <div class="memory-card">
+            <div class="memory-media-wrap">
+              <img src="assets/images/job1.jpg" alt="Field surveys and reports" loading="lazy">
+            </div>
+            <div class="memory-info">
+              <div class="memory-title">Field Research</div>
+              <p class="memory-caption">Data collection and analytics for community wellbeing.</p>
+            </div>
+          </div>
+
+          <div class="memory-card">
+            <div class="memory-media-wrap">
+              <img src="assets/images/college.jpg" alt="Dibrugarh University Campus" loading="lazy">
+            </div>
+            <div class="memory-info">
+              <div class="memory-title">College Days</div>
+              <p class="memory-caption">Collaborating with peers and mentors at DUIET.</p>
+            </div>
+          </div>
+
+          <div class="memory-card">
+            <div class="memory-media-wrap">
+              <video controls preload="metadata">
+                <source src="assets/videos/memory-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="memory-info">
+              <div class="memory-title">Memorable Journey</div>
+              <p class="memory-caption">An expedition and team retreat with university friends.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         "CONNECT WITH ME" TERMINAL (Bottom of Page)
+         ========================================================================== -->
+    <section id="connect" class="connect-section">
+      <div class="container">
+        <div class="connect-terminal-container">
+          <!-- Left Column: Bio & Direct Channels -->
+          <div class="connect-left">
+            <div>
+              <span class="connect-badge">&gt;&gt; TRANSMISSION INTERFACE [ONLINE]</span>
+              <h2 class="connect-heading">LET'S BUILD SOMETHING EXTRAORDINARY</h2>
+              <p class="connect-bio">
+                Whether you have an ambitious software project, want to discuss a full-stack engineering role, collaborate on social technology, or just talk distributed systems—my inbox is always open.
+              </p>
+
+              <div class="connect-channels">
+                <a href="mailto:ghanakanta076@gmail.com" class="channel-item">
+                  <div class="channel-icon"><i class="fas fa-envelope"></i></div>
+                  <div class="channel-details">
+                    <span class="channel-label">Direct Email</span>
+                    <span class="channel-value">ghanakanta076@gmail.com</span>
+                  </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/ghana-payeng" target="_blank" rel="noopener" class="channel-item">
+                  <div class="channel-icon"><i class="fab fa-linkedin"></i></div>
+                  <div class="channel-details">
+                    <span class="channel-label">LinkedIn Network</span>
+                    <span class="channel-value">linkedin.com/in/ghana-payeng</span>
+                  </div>
+                </a>
+
+                <a href="https://github.com/ghanapayeng" target="_blank" rel="noopener" class="channel-item">
+                  <div class="channel-icon"><i class="fab fa-github"></i></div>
+                  <div class="channel-details">
+                    <span class="channel-label">GitHub Source Code</span>
+                    <span class="channel-value">github.com/ghanapayeng</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08);">
+              <span style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase;">TERMINAL QUICK CURL:</span>
+              <div style="background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.74rem; color: var(--term-green); margin-top: 6px; user-select: all;">
+                curl -X POST http://localhost:8080/api/v1/contact
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Glassmorphic Contact Terminal Form -->
+          <div class="connect-terminal-form-card">
+            <div class="form-terminal-header">
+              <div class="form-terminal-title">
+                <span>ghana@os:</span>/connect $ ./dispatch_message.sh
+              </div>
+              <div style="display: flex; gap: 6px;">
+                <span class="light light-red"></span>
+                <span class="light light-yellow"></span>
+                <span class="light light-green"></span>
+              </div>
+            </div>
+
+            <form id="connect-form">
+              <div class="form-group">
+                <label for="contact-name" class="form-label">
+                  <span class="code-prefix">$</span> export VISITOR_NAME
+                </label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. John Doe / Recruiter" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">
+                  <span class="code-prefix">$</span> export VISITOR_EMAIL
+                </label>
+                <input type="email" id="contact-email" class="form-control" placeholder="e.g. john@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">
+                  <span class="code-prefix">$</span> export INQUIRY_SUBJECT
+                </label>
+                <input type="text" id="contact-subject" class="form-control" placeholder="e.g. Project Opportunity / Blood Bridge Collaboration">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">
+                  <span class="code-prefix">$</span> cat &lt;&lt; 'EOF' &gt; message.txt
+                </label>
+                <textarea id="contact-message" class="form-control" placeholder="Write your message or project requirements here..." required></textarea>
+              </div>
+
+              <!-- Real-time Terminal Feedback Status -->
+              <div class="form-status-feed" id="form-feed-status">
+                <span class="status-dot"></span>
+                <span class="status-text">STATUS: STANDBY // Ready to transmit payload to Spring Boot + MySQL (Direct to ghanakanta076@gmail.com)</span>
+              </div>
+
+              <button type="submit" class="btn-form-submit" id="form-submit-btn">
+                <i class="fas fa-paper-plane"></i> [ EXECUTE TRANSMISSION ]
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       TERMINAL FOOTER
+       ========================================================================== -->
+  <footer class="footer-terminal" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-left">
+          <span style="color: var(--accent); font-weight: 700;">GHANA_OS</span>
+          <span>&copy; 2026 Ghana Kanta Payeng. All systems verified.</span>
+        </div>
+        <div class="footer-right">
+          <a href="#home">Back to top [▲]</a>
+          <a href="https://github.com/ghanapayeng" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/ghana-payeng" target="_blank" rel="noopener">LinkedIn</a>
+          <button onclick="openGhanaModal('resumeModal')" style="background:none; border:none; color:inherit; cursor:pointer; font-family:inherit; font-size:inherit;">
+            Resume [PDF]
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS (Certificates, Resume, Deep Dive)
+       ========================================================================== -->
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+    <div class="modal-glass-container">
+      <div class="modal-header">
+        <div class="modal-title" id="resume-title">
+          <span>DOCUMENT:</span> Ghana Kanta Payeng CV.pdf
+        </div>
+        <button class="modal-close-btn" onclick="closeGhanaModal('resumeModal')" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe src="assets/docs/Ghana Kanta Payeng CV.pdf" title="Resume Document"></iframe>
+        <div style="margin-top: 14px; text-align: right;">
+          <a href="assets/docs/Ghana Kanta Payeng CV.pdf" download class="btn-terminal btn-terminal-primary" style="font-size: 0.8rem; padding: 8px 16px;">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate 1: Jagriti Unnayan Modal -->
+  <div id="certificateModal1" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-glass-container">
+      <div class="modal-header">
+        <div class="modal-title"><span>CERTIFICATE:</span> Jagriti Sanmilita Unnayan Kendra</div>
+        <button class="modal-close-btn" onclick="closeGhanaModal('certificateModal1')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/JagritiUnnayan.jpg" alt="Jagriti Sanmilita Unnayan Kendra Certificate">
+        <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+          <strong>Organization:</strong> Jagriti Sanmilita Unnayan Kendra<br>
+          <strong>Role & Impact:</strong> Healthcare needs assessments for 100+ elderly residents, achieving a 40% meal satisfaction surge and weekly social wellness engagement sessions.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate 2: Project Humanity Modal -->
+  <div id="certificateModal2" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-glass-container">
+      <div class="modal-header">
+        <div class="modal-title"><span>CERTIFICATE:</span> Project Humanity</div>
+        <button class="modal-close-btn" onclick="closeGhanaModal('certificateModal2')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/ProjectHumanity.jpg" alt="Project Humanity Certificate">
+        <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+          <strong>Organization:</strong> Project Humanity<br>
+          <strong>Role & Impact:</strong> Addictive behavior survey leadership across 100+ community members, isolating key healthcare accessibility obstacles and enhancing outreach effectiveness by 60%.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 1 Deep Dive Modal -->
+  <div id="modalProject1" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-glass-container">
+      <div class="modal-header">
+        <div class="modal-title"><span>SYSTEM ARCHITECTURE:</span> Engineering Labs & Systems</div>
+        <button class="modal-close-btn" onclick="closeGhanaModal('modalProject1')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/project1.jpg" alt="Systems Deep Dive">
+        <h4 style="color: #fff; margin-bottom: 8px;">Distributed Architecture & Systems Exploration</h4>
+        <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px;">
+          Includes socket programming, custom memory pool implementations in C++, MySQL schema optimization models for rapid telemetry queries, and Spring Boot enterprise microservices.
+        </p>
+        <div style="display: flex; gap: 10px;">
+          <a href="https://github.com/ghanapayeng" target="_blank" rel="noopener" class="btn-terminal btn-terminal-primary" style="font-size: 0.8rem; padding: 6px 14px;">
+            <i class="fab fa-github"></i> View GitHub Repos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/terminal.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
