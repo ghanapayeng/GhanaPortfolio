@@ -126,11 +126,11 @@ export MAIL_PASSWORD="your-16-char-gmail-app-password"
 mvn clean compile
 mvn spring-boot:run
 ```
-The backend will launch on `http://localhost:8080`.
+The backend will launch on `http://localhost:10000`.
 
 Test the health endpoint:
 ```bash
-curl http://localhost:8080/api/v1/health
+curl http://localhost:10000/api/v1/health
 ```
 
 ---

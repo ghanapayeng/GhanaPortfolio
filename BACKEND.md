@@ -4,8 +4,8 @@
 Full-stack production architecture powered by **Spring Boot 3 (Java 17+)**, **Spring Data JPA**, and **MySQL / TiDB Cloud**, with asynchronous **Gmail SMTP mail forwarding**.
 
 The backend serves both:
-1. **REST APIs**: `http://localhost:8080/api/v1/...`
-2. **Static Web Application**: `http://localhost:8080/` (served directly from `src/main/resources/static`)
+1. **REST APIs**: `http://localhost:10000/api/v1/...`
+2. **Static Web Application**: `http://localhost:10000/` (served directly from `src/main/resources/static`)
 
 ---
 
@@ -64,9 +64,9 @@ mvn spring-boot:run
 ```
 
 Access the application in your browser:
-- **Web Portfolio**: [http://localhost:8080](http://localhost:8080)
-- **Health Check**: [http://localhost:8080/api/v1/health](http://localhost:8080/api/v1/health)
-- **Contact API**: [http://localhost:8080/api/v1/contact](http://localhost:8080/api/v1/contact)
+- **Web Portfolio**: [http://localhost:10000](http://localhost:10000)
+- **Health Check**: [http://localhost:10000/api/v1/health](http://localhost:10000/api/v1/health)
+- **Contact API**: [http://localhost:10000/api/v1/contact](http://localhost:10000/api/v1/contact)
 
 ---
 

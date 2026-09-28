@@ -218,7 +218,9 @@ function initConnectForm() {
 
   if (!form) return;
 
-  const BACKEND_API_URL = 'http://localhost:8080/api/v1/contact';
+  const BACKEND_API_URL = (window.location.protocol.startsWith('http') && !window.location.origin.includes('github.io'))
+    ? '/api/v1/contact'
+    : 'http://localhost:10000/api/v1/contact';
   const TARGET_EMAIL = 'ghanakanta076@gmail.com';
 
   form.addEventListener('submit', async (e) => {

@@ -18,13 +18,14 @@ public class PortfolioApplication {
 
     public static void main(String[] args) {
         loadDotenv();
-        SpringApplication.run(PortfolioApplication.class, args);
+        org.springframework.context.ConfigurableApplicationContext context = SpringApplication.run(PortfolioApplication.class, args);
+        String port = context.getEnvironment().getProperty("server.port", "10000");
         System.out.println("==================================================");
         System.out.println("  GHANA_OS BACKEND SYSTEM INITIALIZED (MYSQL + EMAIL)");
-        System.out.println("  Listening on: http://localhost:8080");
-        System.out.println("  Health Check: http://localhost:8080/api/v1/health");
-        System.out.println("  Contact API:  http://localhost:8080/api/v1/contact");
-        System.out.println("  Projects API: http://localhost:8080/api/v1/projects");
+        System.out.println("  Listening on: http://localhost:" + port);
+        System.out.println("  Health Check: http://localhost:" + port + "/api/v1/health");
+        System.out.println("  Contact API:  http://localhost:" + port + "/api/v1/contact");
+        System.out.println("  Projects API: http://localhost:" + port + "/api/v1/projects");
         System.out.println("==================================================");
     }
 
