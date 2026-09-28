@@ -1,17 +1,39 @@
-# Multi-stage Dockerfile for Ghana Kanta Payeng Portfolio
-# Build Stage
+# ==========================================
+# BUILD STAGE
+# ==========================================
+
 FROM eclipse-temurin:17-jdk-jammy AS build
+
 WORKDIR /app
-COPY pom.xml mvnw ./
+
+# Copy Maven wrapper and project configuration
+COPY pom.xml .
+COPY mvnw .
 COPY .mvn .mvn
-RUN ./mvnw dependency:go-offline -B
+
+# Make Maven wrapper executable
+RUN chmod +x mvnw
+
+# Copy source code
 COPY src src
+
+# Build Spring Boot application
 RUN ./mvnw clean package -DskipTests
 
-# Runtime Stage
+
+# ==========================================
+# RUNTIME STAGE
+# ==========================================
+
 FROM eclipse-temurin:17-jre-jammy
+
 WORKDIR /app
+
+# Copy the generated Spring Boot JAR
 COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8080
-ENV PORT=8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Render provides the PORT environment variable
+EXPOSE 10000
+
+# Start Spring Boot using Render's PORT
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-10000}"]
