@@ -83,25 +83,25 @@
   <nav class="glass-nav-wrapper" aria-label="Main Navigation">
     <div class="glass-nav-pill">
       <a href="#home" class="nav-tab active">
-        <span>&lt;HOME&gt;</span><span class="tab-cursor">_</span>
+        <span class="tab-label-full">&lt;HOME&gt;</span><span class="tab-label-short">HOME</span><span class="tab-cursor">_</span>
       </a>
       <a href="#cli-terminal" class="nav-tab">
-        <span>&lt;TERMINAL_CLI&gt;</span><span class="tab-cursor">_</span>
+        <span class="tab-label-full">&lt;TERMINAL_CLI&gt;</span><span class="tab-label-short">CLI</span><span class="tab-cursor">_</span>
       </a>
       <a href="#projects" class="nav-tab">
-        <span>&lt;PROJECTS&gt;</span><span class="tab-cursor">_</span>
+        <span class="tab-label-full">&lt;PROJECTS&gt;</span><span class="tab-label-short">PROJECTS</span><span class="tab-cursor">_</span>
       </a>
       <a href="#skills" class="nav-tab">
-        <span>&lt;SKILLS&gt;</span><span class="tab-cursor">_</span>
+        <span class="tab-label-full">&lt;SKILLS&gt;</span><span class="tab-label-short">SKILLS</span><span class="tab-cursor">_</span>
       </a>
       <a href="#experience" class="nav-tab">
-        <span>&lt;EXPERIENCE&gt;</span><span class="tab-cursor">_</span>
+        <span class="tab-label-full">&lt;EXPERIENCE&gt;</span><span class="tab-label-short">EXP</span><span class="tab-cursor">_</span>
       </a>
       <a href="#memories" class="nav-tab">
-        <span>&lt;MEMORIES&gt;</span><span class="tab-cursor">_</span>
+        <span class="tab-label-full">&lt;MEMORIES&gt;</span><span class="tab-label-short">MEMORIES</span><span class="tab-cursor">_</span>
       </a>
       <a href="#connect" class="nav-tab">
-        <span>&lt;CONNECT&gt;</span><span class="tab-cursor">_</span>
+        <span class="tab-label-full">&lt;CONNECT&gt;</span><span class="tab-label-short">CONNECT</span><span class="tab-cursor">_</span>
       </a>
     </div>
   </nav>
@@ -210,11 +210,12 @@
 
             <div class="terminal-path">
               <i class="fas fa-terminal"></i>
-              <span>ghanapayeng@portfolio: ~/workspace/interactive-cli</span>
+              <span class="path-full">ghanapayeng@portfolio: ~/workspace/interactive-cli</span>
+              <span class="path-short">~/cli</span>
             </div>
 
             <div class="terminal-actions-bar">
-              <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('cyber')">Theme: Cyber</span>
+              <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('cyber')">Cyber</span>
               <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('matrix')">Matrix</span>
               <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('amber')">Amber</span>
               <span class="terminal-quick-chip" onclick="GhanaTerminal.setTheme('hacker')">Hacker</span>
@@ -699,13 +700,6 @@
                     <span class="channel-value">github.com/ghanapayeng</span>
                   </div>
                 </a>
-              </div>
-            </div>
-
-            <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08);">
-              <span style="font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase;">TERMINAL QUICK CURL:</span>
-              <div style="background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: var(--radius-sm); font-size: 0.74rem; color: var(--term-green); margin-top: 6px; user-select: all;">
-                curl -X POST http://localhost:10000/api/v1/contact
               </div>
             </div>
           </div>
